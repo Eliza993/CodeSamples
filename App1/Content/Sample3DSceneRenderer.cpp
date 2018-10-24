@@ -791,6 +791,7 @@ void Sample3DSceneRenderer::Render()
 		0
 	);
 #pragma endregion
+
 #pragma region Draw Floor
 	XMStoreFloat4x4(&m_constantBufferData.model, XMMatrixTranspose(XMMatrixScaling(2, 1, 5)));
 
@@ -1106,125 +1107,125 @@ void Sample3DSceneRenderer::Render()
 
 #pragma endregion
 
-#pragma region Draw Stars
-	XMStoreFloat4x4(&m_constantBufferData.model, XMMatrixTranspose(XMMatrixIdentity()));
-	context->UpdateSubresource1(
-		m_constantBuffer.Get(),
-		0,
-		NULL,
-		&m_constantBufferData,
-		0,
-		0,
-		0
-	);
-
-	//this is just a point
-	context->IASetVertexBuffers(
-		0,
-		1,
-		m_vertexBufferStar.GetAddressOf(),
-		&stride,
-		&offset
-	);
-
-	context->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_POINTLIST);
-
-	context->IASetInputLayout(m_inputLayoutPyramid.Get());
-
-	// Attach our vertex shader.
-	context->VSSetShader(
-		m_vertexShaderGeometry.Get(),
-		nullptr,
-		0
-	);
-
-	// Send the constant buffer to the graphics device.
-	context->VSSetConstantBuffers1(
-		0,
-		1,
-		m_constantBuffer.GetAddressOf(),
-		nullptr,
-		nullptr
-	);
-
-	context->GSSetShader(
-		m_geometryShaderStar.Get(),
-		nullptr,
-		0
-	);
-
-	//NOTE: have to build clockwise if do Look at
-	XMVECTORF32 objectP = { 0, 2.0f, 0 };
-	XMVECTOR objectPos = objectP;
-	XMVECTORF32 cPos = { camera._41, camera._42, camera._43 };
-	XMVECTOR cameraPos = cPos;
-	XMVECTORF32 upV = {0, 1, 1};
-	XMVECTOR upVector = upV;
-	XMMATRIX objectLookAtCamera = XMMatrixLookAtLH(objectPos, cameraPos, upVector);
-	XMMatrixInverse(nullptr, objectLookAtCamera);
-
-	m_cBufferDataLookAt = m_constantBufferData;
-	//XMStoreFloat4x4(&m_cBufferDataLookAt.view, XMMatrixTranspose(objectLookAtCamera));
-	XMStoreFloat4x4(&m_cBufferDataLookAt.model, XMMatrixTranspose(objectLookAtCamera));
-
-	context->UpdateSubresource1(
-		m_constantBuffer.Get(),
-		0,
-		NULL,
-		&m_cBufferDataLookAt,
-		0,
-		0,
-		0
-	);
-
-	context->GSSetConstantBuffers1(
-		0,
-		1,
-		m_constantBuffer.GetAddressOf(),
-		nullptr,
-		nullptr
-	);
-
-	ID3D11Buffer *gBuffer[2] = { m_constantBuffer.Get() , m_constantBufferGeometric.Get() };
-
-	context->GSSetConstantBuffers1(
-		0,
-		2,
-		gBuffer,
-		nullptr,
-		nullptr
-	);
-
-
-	//context->GSSetConstantBuffers1(
-	//	0,
-	//	2,
-	//	m_constantBuffer.GetAddressOf(),
-	//	nullptr,
-	//	nullptr
-	//);
-
-	// Attach our pixel shader.
-	context->PSSetShader(
-		m_pixelShaderIns.Get(),
-		nullptr,
-		0
-	);
-	context->PSSetShaderResources(0, 1, &srvCloud[0]);
-	//context->PSSetShaderResources(0, 1, &srv);
-	context->PSSetSamplers(0, 1, &samplerState);
-
-	// Draw the objects.
-	context->DrawInstanced(1, 40, 0, 0);
-
-	//remove Geometric Shader after use
-	ID3D11GeometryShader *gS = nullptr;
-	context->GSSetShader(
-		gS,
-		nullptr,
-		0
-	);
-#pragma endregion
+//#pragma region Draw Stars
+//	XMStoreFloat4x4(&m_constantBufferData.model, XMMatrixTranspose(XMMatrixIdentity()));
+//	context->UpdateSubresource1(
+//		m_constantBuffer.Get(),
+//		0,
+//		NULL,
+//		&m_constantBufferData,
+//		0,
+//		0,
+//		0
+//	);
+//
+//	//this is just a point
+//	context->IASetVertexBuffers(
+//		0,
+//		1,
+//		m_vertexBufferStar.GetAddressOf(),
+//		&stride,
+//		&offset
+//	);
+//
+//	context->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_POINTLIST);
+//
+//	context->IASetInputLayout(m_inputLayoutPyramid.Get());
+//
+//	// Attach our vertex shader.
+//	context->VSSetShader(
+//		m_vertexShaderGeometry.Get(),
+//		nullptr,
+//		0
+//	);
+//
+//	// Send the constant buffer to the graphics device.
+//	context->VSSetConstantBuffers1(
+//		0,
+//		1,
+//		m_constantBuffer.GetAddressOf(),
+//		nullptr,
+//		nullptr
+//	);
+//
+//	context->GSSetShader(
+//		m_geometryShaderStar.Get(),
+//		nullptr,
+//		0
+//	);
+//
+//	//NOTE: have to build clockwise if do Look at
+//	XMVECTORF32 objectP = { 0, 2.0f, 0 };
+//	XMVECTOR objectPos = objectP;
+//	XMVECTORF32 cPos = { camera._41, camera._42, camera._43 };
+//	XMVECTOR cameraPos = cPos;
+//	XMVECTORF32 upV = {0, 1, 1};
+//	XMVECTOR upVector = upV;
+//	XMMATRIX objectLookAtCamera = XMMatrixLookAtLH(objectPos, cameraPos, upVector);
+//	XMMatrixInverse(nullptr, objectLookAtCamera);
+//
+//	m_cBufferDataLookAt = m_constantBufferData;
+//	//XMStoreFloat4x4(&m_cBufferDataLookAt.view, XMMatrixTranspose(objectLookAtCamera));
+//	XMStoreFloat4x4(&m_cBufferDataLookAt.model, XMMatrixTranspose(objectLookAtCamera));
+//
+//	context->UpdateSubresource1(
+//		m_constantBuffer.Get(),
+//		0,
+//		NULL,
+//		&m_cBufferDataLookAt,
+//		0,
+//		0,
+//		0
+//	);
+//
+//	context->GSSetConstantBuffers1(
+//		0,
+//		1,
+//		m_constantBuffer.GetAddressOf(),
+//		nullptr,
+//		nullptr
+//	);
+//
+//	ID3D11Buffer *gBuffer[2] = { m_constantBuffer.Get() , m_constantBufferGeometric.Get() };
+//
+//	context->GSSetConstantBuffers1(
+//		0,
+//		2,
+//		gBuffer,
+//		nullptr,
+//		nullptr
+//	);
+//
+//
+//	//context->GSSetConstantBuffers1(
+//	//	0,
+//	//	2,
+//	//	m_constantBuffer.GetAddressOf(),
+//	//	nullptr,
+//	//	nullptr
+//	//);
+//
+//	// Attach our pixel shader.
+//	context->PSSetShader(
+//		m_pixelShaderIns.Get(),
+//		nullptr,
+//		0
+//	);
+//	context->PSSetShaderResources(0, 1, &srvCloud[0]);
+//	//context->PSSetShaderResources(0, 1, &srv);
+//	context->PSSetSamplers(0, 1, &samplerState);
+//
+//	// Draw the objects.
+//	context->DrawInstanced(1, 40, 0, 0);
+//
+//	//remove Geometric Shader after use
+//	ID3D11GeometryShader *gS = nullptr;
+//	context->GSSetShader(
+//		gS,
+//		nullptr,
+//		0
+//	);
+//#pragma endregion
 
 	stride = sizeof(VertexUvNormal);
 //#pragma region Draw Wolf
