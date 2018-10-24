@@ -1,0 +1,61 @@
+﻿  compilation object save succeeded; see C:\Users\Eliza\Documents\MEGA\CodeSamples\DirectX\App1\Debug\App1\SamplePixelShader.cso
+  compilation object save succeeded; see C:\Users\Eliza\Documents\MEGA\CodeSamples\DirectX\App1\Debug\App1\SampleVertexShader.cso
+C:\Users\Eliza\Documents\MEGA\CodeSamples\DirectX\App1\App1\DomainShader.hlsl(54,9-99): warning X3206: implicit truncation of vector type
+C:\Users\Eliza\Documents\MEGA\CodeSamples\DirectX\App1\App1\DomainShader.hlsl(61,9-83): warning X3206: implicit truncation of vector type
+  
+  compilation object save succeeded; see C:\Users\Eliza\Documents\MEGA\CodeSamples\DirectX\App1\Debug\App1\DomainShader.cso
+C:\Users\Eliza\Documents\MEGA\CodeSamples\DirectX\App1\App1\GeometryShader.hlsl(69,19-32): warning X3203: signed/unsigned mismatch, unsigned assumed
+  
+  compilation object save succeeded; see C:\Users\Eliza\Documents\MEGA\CodeSamples\DirectX\App1\Debug\App1\GeometryShader.cso
+C:\Users\Eliza\Documents\MEGA\CodeSamples\DirectX\App1\App1\HullShader.hlsl(48,15-44): warning X3206: 'distance': implicit truncation of vector type
+  
+  compilation object save succeeded; see C:\Users\Eliza\Documents\MEGA\CodeSamples\DirectX\App1\Debug\App1\HullShader.cso
+  compilation object save succeeded; see C:\Users\Eliza\Documents\MEGA\CodeSamples\DirectX\App1\Debug\App1\InstancePixelShader.cso
+  compilation object save succeeded; see C:\Users\Eliza\Documents\MEGA\CodeSamples\DirectX\App1\Debug\App1\InstanceVertexShader.cso
+  compilation object save succeeded; see C:\Users\Eliza\Documents\MEGA\CodeSamples\DirectX\App1\Debug\App1\PosUvNPixelShader.cso
+  compilation object save succeeded; see C:\Users\Eliza\Documents\MEGA\CodeSamples\DirectX\App1\Debug\App1\PosUvNVertexShader.cso
+  compilation object save succeeded; see C:\Users\Eliza\Documents\MEGA\CodeSamples\DirectX\App1\Debug\App1\SkyboxPixelShader.cso
+  compilation object save succeeded; see C:\Users\Eliza\Documents\MEGA\CodeSamples\DirectX\App1\Debug\App1\SkyboxVertexShader.cso
+  compilation object save succeeded; see C:\Users\Eliza\Documents\MEGA\CodeSamples\DirectX\App1\Debug\App1\SolidPixelShader.cso
+C:\Users\Eliza\Documents\MEGA\CodeSamples\DirectX\App1\App1\TerrainHullShader.hlsl(48,15-44): warning X3206: 'distance': implicit truncation of vector type
+  
+  compilation object save succeeded; see C:\Users\Eliza\Documents\MEGA\CodeSamples\DirectX\App1\Debug\App1\TerrainHullShader.cso
+  compilation object save succeeded; see C:\Users\Eliza\Documents\MEGA\CodeSamples\DirectX\App1\Debug\App1\TerrainVertexShader.cso
+  compilation object save succeeded; see C:\Users\Eliza\Documents\MEGA\CodeSamples\DirectX\App1\Debug\App1\TessellationVertexShader.cso
+  compilation object save succeeded; see C:\Users\Eliza\Documents\MEGA\CodeSamples\DirectX\App1\Debug\App1\VertexShaderForGeometric.cso
+  pch.cpp
+  App.cpp
+  DeviceResources.cpp
+  App1Main.cpp
+  DDSTextureLoader.cpp
+  SampleFpsTextRenderer.cpp
+  Sample3DSceneRenderer.cpp
+  LoadObj.cpp
+c:\users\eliza\documents\mega\codesamples\directx\app1\app1\app.cpp(18): warning C4451: 'gwindow': Usage of ref class 'Windows::UI::Core::CoreWindow' inside this context can lead to invalid marshaling of object across contexts
+  c:\users\eliza\documents\mega\codesamples\directx\app1\app1\app.cpp(18): note: Consider using 'Platform::Agile<Windows::UI::Core::CoreWindow>' instead
+c:\users\eliza\documents\mega\codesamples\directx\app1\app1\app1main.cpp(20): warning C4316: 'App1::Sample3DSceneRenderer': object allocated on the heap may not be aligned 16
+c:\users\eliza\documents\mega\codesamples\directx\app1\app1\app1main.cpp(46): warning C4451: 'gwindow': Usage of ref class 'Windows::UI::Core::CoreWindow' inside this context can lead to invalid marshaling of object across contexts
+  c:\users\eliza\documents\mega\codesamples\directx\app1\app1\app1main.cpp(46): note: Consider using 'Platform::Agile<Windows::UI::Core::CoreWindow>' instead
+c:\users\eliza\documents\mega\codesamples\directx\app1\app1\content\sample3dscenerenderer.cpp(168): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\eliza\documents\mega\codesamples\directx\app1\app1\content\sample3dscenerenderer.cpp(185): warning C4451: 'gwindow': Usage of ref class 'Windows::UI::Core::CoreWindow' inside this context can lead to invalid marshaling of object across contexts
+  c:\users\eliza\documents\mega\codesamples\directx\app1\app1\content\sample3dscenerenderer.cpp(185): note: Consider using 'Platform::Agile<Windows::UI::Core::CoreWindow>' instead
+c:\users\eliza\documents\mega\codesamples\directx\app1\app1\content\sample3dscenerenderer.cpp(234): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\eliza\documents\mega\codesamples\directx\app1\app1\content\sample3dscenerenderer.cpp(239): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\eliza\documents\mega\codesamples\directx\app1\app1\content\sample3dscenerenderer.cpp(244): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\eliza\documents\mega\codesamples\directx\app1\app1\content\sample3dscenerenderer.cpp(249): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\eliza\documents\mega\codesamples\directx\app1\app1\content\sample3dscenerenderer.cpp(282): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\eliza\documents\mega\codesamples\directx\app1\app1\content\sample3dscenerenderer.cpp(422): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\eliza\documents\mega\codesamples\directx\app1\app1\content\sample3dscenerenderer.cpp(1049): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\eliza\documents\mega\codesamples\directx\app1\app1\content\sample3dscenerenderer.cpp(2419): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\eliza\documents\mega\codesamples\directx\app1\app1\content\sample3dscenerenderer.cpp(2420): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\eliza\documents\mega\codesamples\directx\app1\app1\content\sample3dscenerenderer.cpp(2421): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\eliza\documents\mega\codesamples\directx\app1\app1\content\sample3dscenerenderer.cpp(3044): warning C4018: '<': signed/unsigned mismatch
+c:\users\eliza\documents\mega\codesamples\directx\app1\app1\content\sample3dscenerenderer.cpp(3046): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\eliza\documents\mega\codesamples\directx\app1\app1\content\sample3dscenerenderer.cpp(3047): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\eliza\documents\mega\codesamples\directx\app1\app1\content\sample3dscenerenderer.cpp(3332): warning C4018: '<': signed/unsigned mismatch
+c:\users\eliza\documents\mega\codesamples\directx\app1\app1\content\sample3dscenerenderer.cpp(3346): warning C4244: 'initializing': conversion from 'int' to 'FLOAT', possible loss of data
+c:\users\eliza\documents\mega\codesamples\directx\app1\app1\content\sample3dscenerenderer.cpp(3348): warning C4244: 'argument': conversion from 'float' to 'UINT8', possible loss of data
+c:\users\eliza\documents\mega\codesamples\directx\app1\app1\loadobj.cpp(100): warning C4715: 'loadOBJ': not all control paths return a value
+  App1.vcxproj -> C:\Users\Eliza\Documents\MEGA\CodeSamples\DirectX\App1\Debug\App1\App1.exe
+  App1.vcxproj -> C:\Users\Eliza\Documents\MEGA\CodeSamples\DirectX\App1\Debug\App1\App1.pdb (Partial PDB)
+C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\MSBuild\Microsoft\VisualStudio\v15.0\AppxPackage\Microsoft.AppXPackage.Targets(2492,5): warning APPX0108: The certificate specified has expired. For more information about renewing certificates, see http://go.microsoft.com/fwlink/?LinkID=241478.

@@ -1,0 +1,278 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Machine>ELIZA-HP-ENVY</Machine>
+    <WindowsUser>Eliza</WindowsUser>
+    <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
+    <TargetOsVersion>10.0</TargetOsVersion>
+    <TargetOsDescription>Windows 10.0</TargetOsDescription>
+    <SolutionConfiguration>Debug|Win32</SolutionConfiguration>
+    <PackageArchitecture>x86</PackageArchitecture>
+    <PackageIdentityName>9cec27db-7358-49d3-8c0d-eb7cb01e37aa</PackageIdentityName>
+    <PackageIdentityPublisher>CN=Eliza</PackageIdentityPublisher>
+    <IntermediateOutputPath>C:\Users\Eliza\Documents\MEGA\CodeSamples\DirectX\App1\App1\Debug\</IntermediateOutputPath>
+    <RemoteDeploymentType>CopyToDevice</RemoteDeploymentType>
+    <PackageRegistrationPath>
+    </PackageRegistrationPath>
+    <RemoveNonLayoutFiles>false</RemoveNonLayoutFiles>
+    <DeployOptionalPackages>false</DeployOptionalPackages>
+    <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
+    <LayoutDir>C:\Users\Eliza\Documents\MEGA\CodeSamples\DirectX\App1\Debug\App1\AppX</LayoutDir>
+    <RegisteredManifestChecksum>13DC304E77F21A989337538E91E226DD5D3BC87F7303FC54094C0B53673DAB8A</RegisteredManifestChecksum>
+    <RegisteredPackageMoniker>9cec27db-7358-49d3-8c0d-eb7cb01e37aa_1.0.0.0_x86__9w5d4fhzp10pt</RegisteredPackageMoniker>
+    <RegisteredUserModeAppID>9cec27db-7358-49d3-8c0d-eb7cb01e37aa_9w5d4fhzp10pt!App</RegisteredUserModeAppID>
+    <RegisteredPackageID>9cec27db-7358-49d3-8c0d-eb7cb01e37aa</RegisteredPackageID>
+    <RegisteredPackagePublisher>CN=Eliza</RegisteredPackagePublisher>
+    <RegisteredVersion>1.0.0.0</RegisteredVersion>
+    <JitOptimizationSuppressed>True</JitOptimizationSuppressed>
+  </PropertyGroup>
+  <ItemGroup>
+    <AppXManifest Include="C:\Users\Eliza\Documents\MEGA\CodeSamples\DirectX\App1\Debug\App1\AppxManifest.xml">
+      <PackagePath>AppxManifest.xml</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2018-10-24T22:09:41.138</Modified>
+    </AppXManifest>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxPackagedFile Include="C:\Users\Eliza\Documents\MEGA\CodeSamples\DirectX\App1\Debug\App1\App1.exe">
+      <PackagePath>App1.exe</PackagePath>
+      <Modified>2018-10-24T22:09:38.913</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Eliza\Documents\MEGA\CodeSamples\DirectX\App1\Debug\App1\App1.winmd">
+      <PackagePath>App1.winmd</PackagePath>
+      <Modified>2018-10-24T22:09:38.720</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Eliza\Documents\MEGA\CodeSamples\DirectX\App1\App1\Assets\Brick.dds">
+      <PackagePath>Assets\Brick.dds</PackagePath>
+      <Modified>2018-10-24T21:38:48.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Eliza\Documents\MEGA\CodeSamples\DirectX\App1\App1\Assets\c1.dds">
+      <PackagePath>Assets\c1.dds</PackagePath>
+      <Modified>2018-10-24T21:38:53.597</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Eliza\Documents\MEGA\CodeSamples\DirectX\App1\App1\Assets\c2.dds">
+      <PackagePath>Assets\c2.dds</PackagePath>
+      <Modified>2018-10-24T21:38:53.619</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Eliza\Documents\MEGA\CodeSamples\DirectX\App1\App1\Assets\c3.dds">
+      <PackagePath>Assets\c3.dds</PackagePath>
+      <Modified>2018-10-24T21:38:53.635</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Eliza\Documents\MEGA\CodeSamples\DirectX\App1\App1\Assets\c4.dds">
+      <PackagePath>Assets\c4.dds</PackagePath>
+      <Modified>2018-10-24T21:38:53.638</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Eliza\Documents\MEGA\CodeSamples\DirectX\App1\App1\Assets\CherryTree.dds">
+      <PackagePath>Assets\CherryTree.dds</PackagePath>
+      <Modified>2018-10-24T21:38:48.713</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Eliza\Documents\MEGA\CodeSamples\DirectX\App1\App1\Assets\cloud.dds">
+      <PackagePath>Assets\cloud.dds</PackagePath>
+      <Modified>2018-10-24T21:38:53.672</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Eliza\Documents\MEGA\CodeSamples\DirectX\App1\App1\Assets\cloud2.dds">
+      <PackagePath>Assets\cloud2.dds</PackagePath>
+      <Modified>2018-10-24T21:38:53.680</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Eliza\Documents\MEGA\CodeSamples\DirectX\App1\App1\Assets\floor.dds">
+      <PackagePath>Assets\floor.dds</PackagePath>
+      <Modified>2018-10-24T21:38:55.942</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Eliza\Documents\MEGA\CodeSamples\DirectX\App1\App1\Assets\heightMap.dds">
+      <PackagePath>Assets\heightMap.dds</PackagePath>
+      <Modified>2018-10-24T21:38:55.956</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Eliza\Documents\MEGA\CodeSamples\DirectX\App1\App1\Assets\Knight.dds">
+      <PackagePath>Assets\Knight.dds</PackagePath>
+      <Modified>2018-10-24T21:38:50.770</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Eliza\Documents\MEGA\CodeSamples\DirectX\App1\App1\Assets\MapleTree.dds">
+      <PackagePath>Assets\MapleTree.dds</PackagePath>
+      <Modified>2018-10-24T21:38:51.116</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Eliza\Documents\MEGA\CodeSamples\DirectX\App1\App1\Assets\Rabbit.dds">
+      <PackagePath>Assets\Rabbit.dds</PackagePath>
+      <Modified>2018-10-24T21:38:52.735</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Eliza\Documents\MEGA\CodeSamples\DirectX\App1\App1\Assets\rose.dds">
+      <PackagePath>Assets\rose.dds</PackagePath>
+      <Modified>2018-10-24T21:38:57.404</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Eliza\Documents\MEGA\CodeSamples\DirectX\App1\App1\Assets\SkyBox.dds">
+      <PackagePath>Assets\SkyBox.dds</PackagePath>
+      <Modified>2018-10-24T21:38:53.291</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Eliza\Documents\MEGA\CodeSamples\DirectX\App1\App1\Assets\wolfB.dds">
+      <PackagePath>Assets\wolfB.dds</PackagePath>
+      <Modified>2018-10-24T21:38:58.627</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Eliza\Documents\MEGA\CodeSamples\DirectX\App1\App1\Assets\LockScreenLogo.scale-200.png">
+      <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
+      <Modified>2018-10-24T21:38:51.038</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Eliza\Documents\MEGA\CodeSamples\DirectX\App1\App1\Assets\SplashScreen.scale-200.png">
+      <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2018-10-24T21:38:53.308</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Eliza\Documents\MEGA\CodeSamples\DirectX\App1\App1\Assets\Square150x150Logo.scale-200.png">
+      <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2018-10-24T21:38:53.309</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Eliza\Documents\MEGA\CodeSamples\DirectX\App1\App1\Assets\Square44x44Logo.scale-200.png">
+      <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2018-10-24T21:38:53.386</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Eliza\Documents\MEGA\CodeSamples\DirectX\App1\App1\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
+      <PackagePath>Assets\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2018-10-24T21:38:53.422</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Eliza\Documents\MEGA\CodeSamples\DirectX\App1\App1\Assets\StoreLogo.png">
+      <PackagePath>Assets\StoreLogo.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2018-10-24T21:38:53.474</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Eliza\Documents\MEGA\CodeSamples\DirectX\App1\App1\Assets\Wide310x150Logo.scale-200.png">
+      <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2018-10-24T21:38:53.530</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Eliza\Documents\MEGA\CodeSamples\DirectX\App1\App1\Assets\wolf2.obj">
+      <PackagePath>Assets\wolf2.obj</PackagePath>
+      <Modified>2018-10-24T21:38:57.899</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Eliza\Documents\MEGA\CodeSamples\DirectX\App1\App1\Assets\wolf.obj">
+      <PackagePath>Assets\wolf.obj</PackagePath>
+      <Modified>2018-10-24T21:38:57.660</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Eliza\Documents\MEGA\CodeSamples\DirectX\App1\App1\Assets\Cherry2.obj">
+      <PackagePath>Assets\Cherry2.obj</PackagePath>
+      <Modified>2018-10-24T21:38:48.221</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Eliza\Documents\MEGA\CodeSamples\DirectX\App1\App1\Assets\FlatTerrain.obj">
+      <PackagePath>Assets\FlatTerrain.obj</PackagePath>
+      <Modified>2018-10-24T21:38:48.963</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Eliza\Documents\MEGA\CodeSamples\DirectX\App1\App1\Assets\Castle.obj">
+      <PackagePath>Assets\Castle.obj</PackagePath>
+      <Modified>2018-10-24T21:38:48.065</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Eliza\Documents\MEGA\CodeSamples\DirectX\App1\App1\Assets\Knight.obj">
+      <PackagePath>Assets\Knight.obj</PackagePath>
+      <Modified>2018-10-24T21:38:51.035</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Eliza\Documents\MEGA\CodeSamples\DirectX\App1\App1\Assets\Rabbit.obj">
+      <PackagePath>Assets\Rabbit.obj</PackagePath>
+      <Modified>2018-10-24T21:38:52.763</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Eliza\Documents\MEGA\CodeSamples\DirectX\App1\App1\Assets\MapleTree.obj">
+      <PackagePath>Assets\MapleTree.obj</PackagePath>
+      <Modified>2018-10-24T21:38:51.133</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Eliza\Documents\MEGA\CodeSamples\DirectX\App1\Debug\App1\SamplePixelShader.cso">
+      <PackagePath>SamplePixelShader.cso</PackagePath>
+      <Modified>2018-10-24T22:08:58.319</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Eliza\Documents\MEGA\CodeSamples\DirectX\App1\Debug\App1\SampleVertexShader.cso">
+      <PackagePath>SampleVertexShader.cso</PackagePath>
+      <Modified>2018-10-24T22:08:59.197</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Eliza\Documents\MEGA\CodeSamples\DirectX\App1\Debug\App1\DomainShader.cso">
+      <PackagePath>DomainShader.cso</PackagePath>
+      <Modified>2018-10-24T22:08:59.560</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Eliza\Documents\MEGA\CodeSamples\DirectX\App1\Debug\App1\GeometryShader.cso">
+      <PackagePath>GeometryShader.cso</PackagePath>
+      <Modified>2018-10-24T22:08:59.871</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Eliza\Documents\MEGA\CodeSamples\DirectX\App1\Debug\App1\HullShader.cso">
+      <PackagePath>HullShader.cso</PackagePath>
+      <Modified>2018-10-24T22:09:00.073</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Eliza\Documents\MEGA\CodeSamples\DirectX\App1\Debug\App1\InstancePixelShader.cso">
+      <PackagePath>InstancePixelShader.cso</PackagePath>
+      <Modified>2018-10-24T22:09:00.311</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Eliza\Documents\MEGA\CodeSamples\DirectX\App1\Debug\App1\InstanceVertexShader.cso">
+      <PackagePath>InstanceVertexShader.cso</PackagePath>
+      <Modified>2018-10-24T22:09:00.494</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Eliza\Documents\MEGA\CodeSamples\DirectX\App1\Debug\App1\PosUvNPixelShader.cso">
+      <PackagePath>PosUvNPixelShader.cso</PackagePath>
+      <Modified>2018-10-24T22:09:00.679</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Eliza\Documents\MEGA\CodeSamples\DirectX\App1\Debug\App1\PosUvNVertexShader.cso">
+      <PackagePath>PosUvNVertexShader.cso</PackagePath>
+      <Modified>2018-10-24T22:09:00.884</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Eliza\Documents\MEGA\CodeSamples\DirectX\App1\Debug\App1\SkyboxPixelShader.cso">
+      <PackagePath>SkyboxPixelShader.cso</PackagePath>
+      <Modified>2018-10-24T22:09:01.089</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Eliza\Documents\MEGA\CodeSamples\DirectX\App1\Debug\App1\SkyboxVertexShader.cso">
+      <PackagePath>SkyboxVertexShader.cso</PackagePath>
+      <Modified>2018-10-24T22:09:01.273</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Eliza\Documents\MEGA\CodeSamples\DirectX\App1\Debug\App1\SolidPixelShader.cso">
+      <PackagePath>SolidPixelShader.cso</PackagePath>
+      <Modified>2018-10-24T22:09:01.509</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Eliza\Documents\MEGA\CodeSamples\DirectX\App1\Debug\App1\TerrainHullShader.cso">
+      <PackagePath>TerrainHullShader.cso</PackagePath>
+      <Modified>2018-10-24T22:09:01.688</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Eliza\Documents\MEGA\CodeSamples\DirectX\App1\Debug\App1\TerrainVertexShader.cso">
+      <PackagePath>TerrainVertexShader.cso</PackagePath>
+      <Modified>2018-10-24T22:09:01.889</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Eliza\Documents\MEGA\CodeSamples\DirectX\App1\Debug\App1\TessellationVertexShader.cso">
+      <PackagePath>TessellationVertexShader.cso</PackagePath>
+      <Modified>2018-10-24T22:09:02.066</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Eliza\Documents\MEGA\CodeSamples\DirectX\App1\Debug\App1\VertexShaderForGeometric.cso">
+      <PackagePath>VertexShaderForGeometric.cso</PackagePath>
+      <Modified>2018-10-24T22:09:02.247</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.UniversalCRT.Debug\10.0.14393.0\\redist\Debug\x86\ucrtbased.dll">
+      <PackagePath>ucrtbased.dll</PackagePath>
+      <Modified>2017-01-06T11:22:20.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Eliza\Documents\MEGA\CodeSamples\DirectX\App1\Debug\App1\resources.pri">
+      <PackagePath>resources.pri</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2018-10-24T22:09:40.278</Modified>
+    </AppxPackagedFile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\">
+      <Name>Microsoft.VCLibs.140.00.Debug</Name>
+      <Version>14.0.26726.0</Version>
+      <Architecture>ARM</Architecture>
+      <FrameworkIdentity>Name = Microsoft.VCLibs.140.00.Debug, MinVersion = 14.0.26726.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\.\AppX\Debug\ARM\Microsoft.VCLibs.ARM.Debug.14.00.appx</AppxLocation>
+      <MoreInfo>
+      </MoreInfo>
+    </ResolvedSDKReference>
+    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\">
+      <Name>Microsoft.VCLibs.140.00.Debug</Name>
+      <Version>14.0.26726.0</Version>
+      <Architecture>x64</Architecture>
+      <FrameworkIdentity>Name = Microsoft.VCLibs.140.00.Debug, MinVersion = 14.0.26726.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\.\AppX\Debug\x64\Microsoft.VCLibs.x64.Debug.14.00.appx</AppxLocation>
+      <MoreInfo>
+      </MoreInfo>
+    </ResolvedSDKReference>
+    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\">
+      <Name>Microsoft.VCLibs.140.00.Debug</Name>
+      <Version>14.0.26726.0</Version>
+      <Architecture>x86</Architecture>
+      <FrameworkIdentity>Name = Microsoft.VCLibs.140.00.Debug, MinVersion = 14.0.26726.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\.\AppX\Debug\x86\Microsoft.VCLibs.x86.Debug.14.00.appx</AppxLocation>
+      <MoreInfo>
+      </MoreInfo>
+    </ResolvedSDKReference>
+  </ItemGroup>
+</Project>
