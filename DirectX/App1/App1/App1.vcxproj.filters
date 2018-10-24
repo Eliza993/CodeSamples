@@ -1,0 +1,216 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Common">
+      <UniqueIdentifier>497e234a-289c-4f77-bcd0-7e11e3949dae</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Assets">
+      <UniqueIdentifier>0c2a381b-6e54-4b62-990a-516261d5ad87</UniqueIdentifier>
+      <Extensions>bmp;fbx;gif;jpg;jpeg;tga;tiff;tif;png</Extensions>
+    </Filter>
+    <Filter Include="Content">
+      <UniqueIdentifier>50389030-1c4b-49c9-a500-8c02dd41ec75</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="Common\DirectXHelper.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\StepTimer.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\DeviceResources.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClCompile Include="Common\DeviceResources.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClInclude Include="Content\Sample3DSceneRenderer.h">
+      <Filter>Content</Filter>
+    </ClInclude>
+    <ClInclude Include="Content\SampleFpsTextRenderer.h">
+      <Filter>Content</Filter>
+    </ClInclude>
+    <ClInclude Include="Content\ShaderStructures.h">
+      <Filter>Content</Filter>
+    </ClInclude>
+    <ClCompile Include="Content\Sample3DSceneRenderer.cpp">
+      <Filter>Content</Filter>
+    </ClCompile>
+    <ClCompile Include="Content\SampleFpsTextRenderer.cpp">
+      <Filter>Content</Filter>
+    </ClCompile>
+    <FxCompile Include="Content\SamplePixelShader.hlsl">
+      <Filter>Content</Filter>
+    </FxCompile>
+    <FxCompile Include="Content\SampleVertexShader.hlsl">
+      <Filter>Content</Filter>
+    </FxCompile>
+    <Image Include="Assets\LockScreenLogo.scale-200.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\SplashScreen.scale-200.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\Square150x150Logo.scale-200.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\Square44x44Logo.scale-200.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\Wide310x150Logo.scale-200.png">
+      <Filter>Assets</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="App.cpp" />
+    <ClCompile Include="App1Main.cpp" />
+    <ClCompile Include="pch.cpp" />
+    <ClCompile Include="LoadObj.cpp" />
+    <ClCompile Include="Content\DDSTextureLoader.cpp">
+      <Filter>Content</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="App.h" />
+    <ClInclude Include="App1Main.h" />
+    <ClInclude Include="pch.h" />
+    <ClInclude Include="LoadObj.h">
+      <Filter>Content</Filter>
+    </ClInclude>
+    <ClInclude Include="Assets\test pyramid.h">
+      <Filter>Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="Content\DDSTextureLoader.h">
+      <Filter>Content</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Assets\StoreLogo.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\rose.dds">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\wolfB.dds">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\floor.dds">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\SkyBox.dds">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\CherryTree.dds">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\c1.dds">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\c2.dds">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\c3.dds">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\c4.dds">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\heightMap.dds">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\Brick.dds">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\Knight.dds">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\Rabbit.dds">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\MapleTree.dds">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\cloud.dds">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\cloud2.dds">
+      <Filter>Assets</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxManifest Include="Package.appxmanifest" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App1_TemporaryKey.pfx" />
+    <None Include="Assets\wolf2.obj">
+      <Filter>Assets</Filter>
+    </None>
+    <None Include="Assets\wolf.obj">
+      <Filter>Assets</Filter>
+    </None>
+    <None Include="Assets\Cherry2.obj">
+      <Filter>Assets</Filter>
+    </None>
+    <None Include="Assets\FlatTerrain.obj">
+      <Filter>Assets</Filter>
+    </None>
+    <None Include="Assets\Castle.obj">
+      <Filter>Assets</Filter>
+    </None>
+    <None Include="Assets\Knight.obj">
+      <Filter>Assets</Filter>
+    </None>
+    <None Include="Assets\Rabbit.obj">
+      <Filter>Assets</Filter>
+    </None>
+    <None Include="Assets\MapleTree.obj">
+      <Filter>Assets</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="PosUvNVertexShader.hlsl">
+      <Filter>Content</Filter>
+    </FxCompile>
+    <FxCompile Include="PosUvNPixelShader.hlsl">
+      <Filter>Content</Filter>
+    </FxCompile>
+    <FxCompile Include="SkyboxPixelShader.hlsl">
+      <Filter>Content</Filter>
+    </FxCompile>
+    <FxCompile Include="SkyboxVertexShader.hlsl">
+      <Filter>Content</Filter>
+    </FxCompile>
+    <FxCompile Include="GeometryShader.hlsl">
+      <Filter>Content</Filter>
+    </FxCompile>
+    <FxCompile Include="InstanceVertexShader.hlsl">
+      <Filter>Content</Filter>
+    </FxCompile>
+    <FxCompile Include="InstancePixelShader.hlsl">
+      <Filter>Content</Filter>
+    </FxCompile>
+    <FxCompile Include="VertexShaderForGeometric.hlsl">
+      <Filter>Content</Filter>
+    </FxCompile>
+    <FxCompile Include="HullShader.hlsl">
+      <Filter>Content</Filter>
+    </FxCompile>
+    <FxCompile Include="DomainShader.hlsl">
+      <Filter>Content</Filter>
+    </FxCompile>
+    <FxCompile Include="TessellationVertexShader.hlsl">
+      <Filter>Content</Filter>
+    </FxCompile>
+    <FxCompile Include="SolidPixelShader.hlsl">
+      <Filter>Content</Filter>
+    </FxCompile>
+    <FxCompile Include="TerrainHullShader.hlsl">
+      <Filter>Content</Filter>
+    </FxCompile>
+    <FxCompile Include="TerrainVertexShader.hlsl">
+      <Filter>Content</Filter>
+    </FxCompile>
+  </ItemGroup>
+</Project>
