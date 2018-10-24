@@ -3,11 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using CodeStage.AntiCheat.ObscuredTypes;
 
-//try to start jump by check hands
-//once start, start measuring total Vel
-//once hand get down near end, make player jump, speed based on total Vel
-//reset
-
 namespace Oneiric.Shooter
 {
 	public class PlayerJumpingController : PlayerBase
@@ -45,10 +40,9 @@ namespace Oneiric.Shooter
 		{
 			ActiveJump();
 			CheckCancel();
-			CheckHandFinish();
+			CheckStart();
 		}
 
-		//active when 2 hands over head & infront of player & move down
 		private void ActiveJump()
 		{
 			if (jumpState != JumpState.NONE)
@@ -61,8 +55,7 @@ namespace Oneiric.Shooter
 			}
 		}
 
-		//true when hands are near player's back
-		private bool CheckHandFinish()
+		private bool CheckStart()
 		{
 			if (jumpState != JumpState.PREPARE)
 				return false;

@@ -16,7 +16,6 @@ class LeComp_Familiar : public LeComp_MOB
 	float3 curPos;
 	float3 offset;
 
-	//float curAtkTime;
 	const float atkTime = 3.0f;
 	float followDeltaTime;
 	int numPE = 0;

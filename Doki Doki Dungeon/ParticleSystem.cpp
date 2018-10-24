@@ -83,7 +83,6 @@ bool ParticleSystem::InitilizeBuffer(ID3D11Device *device)
 	ZeroMemory(&bufferDesc, sizeof(bufferDesc));
 	bufferDesc.Usage = D3D11_USAGE_DYNAMIC;
 	bufferDesc.BindFlags = D3D11_BIND_VERTEX_BUFFER;
-	//bufferDesc.BindFlags = D3D11_BIND_CONSTANT_BUFFER;
 	bufferDesc.CPUAccessFlags = D3D11_CPU_ACCESS_WRITE;
 	bufferDesc.ByteWidth = sizeof(float4x4);
 	HRESULT result = DCurrentRenderer->device->CreateBuffer(&bufferDesc, nullptr, &instanceBuffer);
@@ -91,7 +90,7 @@ bool ParticleSystem::InitilizeBuffer(ID3D11Device *device)
 	return true;
 }
 
-bool ParticleSystem::UpdateBuffer()// ID3D11DeviceContext * context)
+bool ParticleSystem::UpdateBuffer()
 {
 	D3D11_MAPPED_SUBRESOURCE mappedResource;
 	ZeroMemory(&mappedResource, sizeof(D3D11_MAPPED_SUBRESOURCE));
@@ -108,24 +107,8 @@ bool ParticleSystem::UpdateBuffer()// ID3D11DeviceContext * context)
 		count++;
 	}
 
-	//hr = context->Map(vertexBuffer.Get(), 0, D3D11_MAP_WRITE_DISCARD, 0, &mappedResource);
-	//if (hr != S_OK)
-	//{
-	//	return false;
-	//}
-	//ParticleVertex* v = (ParticleVertex*)mappedResource.pData;
-	////memcpy(v, (void*)vertices, sizeof(ParticleVertex)*numParticle);
-	//memcpy(v, vertices, sizeof(ParticleVertex)*maxParticle);
-	////memcpy(mappedResource.pData, vertices, sizeof(ParticleVertex)*numParticle);
-	//context->Unmap(vertexBuffer.Get(), 0);
-
-	//float4x4 val = float4x4::GetIdentity();
-	//DCurrentRenderer->UpdateBuffer(vertexBuffer.GetAddressOf(), vertices, sizeof(ParticleVertex)*maxParticle);
-	//DCurrentRenderer->UpdateBuffer(instanceBuffer.GetAddressOf(), &val/*owner->transforms[0].transformMatrix*/, sizeof(float4x4));
-
 	DCurrentRenderer->UpdateBuffer(vertexBuffer.GetAddressOf(), vertices, sizeof(ParticleVertex)*maxParticle);
 	DCurrentRenderer->UpdateBuffer(instanceBuffer.GetAddressOf(), &owner->transforms[0].transformMatrix, sizeof(float4x4));
-
 
 	return true;
 }
@@ -138,11 +121,6 @@ void ParticleSystem::ShutdownBuffer()
 
 void ParticleSystem::RemoveDeadParticles()
 {
-	//way1 : failed: connect to a f, doesnt remove Pointer inside
-	//particleList.remove_if(IsDead);
-
-	//way2:
-
 	int count = 0;
 	auto iter = particleList.begin();
 	while (iter != particleList.end())
@@ -170,22 +148,8 @@ void ParticleSystem::UpdateParticle(float time)
 		{
 			temp->isAlive = false;
 		}
-		//temp->pos.y += temp->velocity.y;
-		//temp->rotateZ += 10.0f;
-		//if (temp->rotateZ >= 360)
-		//{
-		//	temp->rotateZ = 0;
-		//}
 	}
 }
-
-//ParticleSystem::ParticleSystem()
-//{
-//}
-//
-//ParticleSystem::ParticleSystem(const ParticleSystem &)
-//{
-//}
 
 ParticleSystem::ParticleSystem(Object * _owner) : ILeComponent(_owner)
 {
@@ -198,13 +162,6 @@ ParticleSystem::~ParticleSystem()
 
 bool ParticleSystem::InitializeParticle(ID3D11Device * device)
 {
-	////srand((unsigned)time(0));
-
-	//if (!InitilizeEmitter())
-	//{
-	//	return false;
-	//}
-
 	InitilizeParticleSystem();
 
 	if (!InitilizeBuffer(device))
@@ -300,11 +257,6 @@ void ParticleSystem::SetAliveTimePS(float _maxAlivePS)
 	maxAlivePS = _maxAlivePS;
 }
 
-//void ParticleSystem::SetTotalAliveTimePS(float _totalAliveTime)
-//{
-//	totalAlivePS = _totalAliveTime;
-//}
-
 void ParticleSystem::SetCanRotate(bool _canRotate)
 {
 	canRotate = _canRotate;
@@ -348,12 +300,9 @@ void ParticleSystem::SetMinMaxTextureSize(float2 _min, float2 _max)
 
 void ParticleSystem::Init()
 {
-	//peIndex++;
-
 	isActive = true;
 
 	InitilizeEmitter();
-	//Initialize(DCurrentRenderer->device);
 }
 
 void ParticleSystem::Register()
@@ -371,21 +320,6 @@ void ParticleSystem::Destroy()
 	DCurrentRenderer->RemoveParticleSystem(this);
 }
 
-//ParticleSystem::Emitter::Emitter(int _direction, int _maxParticle, float _rate, float _minDis, float _maxDis, float _spreadAngle, float _speed, float _randSpeed)
-//{
-//	maxParticle = _maxParticle;
-//	rate = _rate;
-//	minDis = _minDis;
-//	maxDis = _maxDis;
-//	direction = _direction;
-//	spreadAngle = _spreadAngle;
-//	speed = _speed;
-//	randSpeed = _randSpeed;
-//	curTime = 0;
-//	numParticle = 0;
-//}
-
-//void ParticleSystem::Emitter::Emit(float time)
 void ParticleSystem::Emit(float time)
 {
 	curTime += time;
@@ -395,7 +329,6 @@ void ParticleSystem::Emit(float time)
 		{
 			float3 pos;
 			pos.x = (float)(rand() / (float)RAND_MAX) * (maxDis - minDis);
-			//pos.y = (float)(rand() / (float)RAND_MAX) * (maxDis - minDis);
 			//NOTE: move up a little to see easier/faster, can also increase speed to make move up faster
 			pos.y = 0;
 			pos.z = (float)(rand() / (float)RAND_MAX) * (maxDis - minDis);
@@ -422,8 +355,6 @@ void ParticleSystem::Emit(float time)
 			float2 size;
 			size.x = (float)(rand() / (float)RAND_MAX) * (maxSize.x - minSize.x) + minSize.x;
 			size.y = (float)(rand() / (float)RAND_MAX) * (maxSize.y - minSize.y) + minSize.y;
-
-			//size = {1.0f, 1.0f};
 
 			float2 uv = { 0, 0 };
 			float rotate = 0;

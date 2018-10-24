@@ -32,10 +32,8 @@ enum SOUNDS
 class SoundSystems
 {
 private:
-	//NOTE: couldn't create SourceVoice without sound, don't use this for now, may come back later if want to improve speed
 	struct SourceVoices
 	{
-		//move SV between 2 channels boxes, don't create in the middle because it is expensive
 		vector<IXAudio2SourceVoice*> idleChannels;
 		vector<IXAudio2SourceVoice*> activeChannels;
 	};

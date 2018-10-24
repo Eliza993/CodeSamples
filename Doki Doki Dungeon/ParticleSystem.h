@@ -10,9 +10,6 @@
 using Microsoft::WRL::ComPtr;
 using namespace std;
 
-//class GameDataTypes;
-//static unsigned int peIndex;
-
 enum class EParticleVertexType {
 	ePoint,
 	eLine,
@@ -40,35 +37,6 @@ private:
 
 protected:
 	EParticleVertexType particleVertexType = EParticleVertexType::ePoint;
-	//class Emitter
-	//{
-	//	int direction; //0 = x, 1 = y, 2 = z
-	//	int maxParticle;
-	//	int numParticle;
-	//	float rate; //particle per second
-	//	float minDis;
-	//	float maxDis;
-	//	float spreadAngle; 
-	//	float speed; //emission speed
-	//	float randSpeed;
-	//	float curTime;
-	//public:
-	//	Emitter() {};
-	//	Emitter(int _direction,
-	//			int _maxParticle,
-	//			float _rate,
-	//			float _minDis,
-	//			float _maxDis,
-	//			float _spreadAngle,
-	//			float _speed,
-	//			float _randSpeed);
-	//	//create Particle when in time
-	//	void Emit(float time);
-	//	//float GetCurTime()const { return curTime; };
-	//	//float GetRate()const { return rate; };
-	//	int GetnumParticle() const { return numParticle; };
-	//	//void SetCurTime(float _curTime) { curTime = _curTime; };
-	//};
 
 	int direction; //0 = x, 1 = -x, 2 = y, 3 = -y, 4 = z, 5 = -z, -1 = NONE
 	float transparent;
@@ -101,9 +69,7 @@ protected:
 	float2 maxSize;
 
 	list<Particle*> particleList;
-	//Emitter *emitter;
 
-	//ParticleVertex *vertices;
 	ParticleVertex vertices[100];
 	ComPtr<ID3D11Buffer> vertexBuffer;
 	ComPtr<ID3D11Buffer> instanceBuffer;
@@ -114,14 +80,12 @@ protected:
 	virtual void Emit(float time); //create 1 Particle on Rate at random element
 
 	bool InitilizeBuffer(ID3D11Device *device);
-	bool UpdateBuffer();// ID3D11DeviceContext *context);
+	bool UpdateBuffer();
 	void RemoveDeadParticles();
 	void ShutdownParticleSystem();
 	void ShutdownBuffer();
 
 public:
-	//ParticleSystem() {};
-	//ParticleSystem(const ParticleSystem &);
 	ParticleSystem(Object *owner);
 	virtual ~ParticleSystem();
 
@@ -129,14 +93,12 @@ public:
 	bool InitializeParticle(ID3D11Device *device); //NOTE: call this after Set values
 	void ShutDown();
 	//run per frame
-	virtual bool Frame(float time);//, ID3D11DeviceContext *context);
+	virtual bool Frame(float time);
 
 	int GetMaxParticle() const { return maxParticle; }
 
 	bool GetActive() { return isActive; }
 	void SetActive(bool _active) { isActive = _active; }
-
-	//float GetTransparent() { return transparent; }
 
 	void SetDirection(int _direction); //0 = x, 1 = y, 2 = z
 	void SetTransparent(float _transparent);
@@ -149,7 +111,6 @@ public:
 	void SetOffset(float3 _offset);
 	void SetAliveTimeEachParticle(float _maxAliveTime);
 	void SetAliveTimePS(float _maxAlivePS);
-	//void SetTotalAliveTimePS(float _totalAliveTime);
 	void SetCanRotate(bool _canRotate);
 	void SetScalable(bool _scalable);
 	void SetRandomColor(bool _randomColor);
@@ -160,7 +121,6 @@ public:
 	void SetMinMaxTextureSize(float2 _min, float2 _max);
 
 	ID3D11Buffer * const GetVertexBuffer() const { return vertexBuffer.Get(); }
-	//ID3D11Buffer * const * GetVertexBuffer() { return vertexBuffer.GetAddressOf(); }
 	ID3D11Buffer * const GetInstanceBuffer() const { return instanceBuffer.Get(); }
 	int GetVertexCount() const { return (int)particleList.size(); }
 	EParticleVertexType GetParticleVertexType() const { return particleVertexType; }

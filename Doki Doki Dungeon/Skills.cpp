@@ -319,12 +319,6 @@ void PlayerSkillNode::DebuffStatsTeam(AbilityName skillName)
 				}
 			}
 
-			//cout << "Debuff stats, time: " << timer.GetCurTimeSecond()
-			//	<< "/nPlayer stats: " << player->getCurStr() << "-STR " << player->getCurCon() << "-CON " << player->getBaseStr() << "-RES "
-			//	<< player->getCurIntell() << "-INT " << player->getCurWis() << "-WIS " << player->getCurDex() << "-DEX " << player->getCurAgi() << "-ALI " << endl;
-			//cout << "Player stats: " << player->getCurStr() << "-STR " << player->getCurCon() << "-CON " << player->getBaseStr() << "-RES "
-			//	<< player->getCurIntell() << "-INT " << player->getCurWis() << "-WIS " << player->getCurDex() << "-DEX " << player->getCurAgi() << "-ALI " << endl;
-
 			for (int i = 0; i < 3; i++)
 			{
 				if (buffMember[i] == 1) //only debuff member with this Buff
@@ -391,7 +385,6 @@ void PlayerSkillNode::DebuffAutoAttackTeam()
 					break;
 				}
 			}
-			//restTime.StartTimer();
 		}
 		catch (...)
 		{
@@ -434,15 +427,11 @@ void PlayerSkillNode::MoveObjectOverTime(Object * obj, float3 targetPos, float m
 			{
 				if (deltaTimerMove.GetCurTimeMillisecond() >= 30)
 				{
-					//not work, this move sphere but not Enemy itself
-					//obj->transforms[0].position = obj->GetPosition() + dir*1.5f;
-
 					obj->SetPosition(obj->GetPosition() + dir*speed);
 					dis = obj->GetPosition().GetDistance(targetPos);
 					dir = targetPos - obj->GetPosition();
 					deltaTimerMove.StartTimer();
 				}
-				//restTime.StartTimer();
 			}
 			catch (...)
 			{
@@ -468,7 +457,7 @@ void PlayerSkillNode::MoveObjectOverTime(Object * obj, float3 targetPos, float m
 void PlayerSkillNode::MoveGroupTargetOverTime(float3 targetPos, float speed, float dt)
 {
 	curTime += dt;
-	//if (timer.GetCurTimeMillisecond() <= moveTimeMilli)
+
 	if (curTime <= activeTime)
 	{
 		for (int i = 0; i < targets.size(); i++)
@@ -495,7 +484,6 @@ void PlayerSkillNode::MoveGroupTargetOverTime(float3 targetPos, float speed, flo
 						dis = obj->GetPosition().GetDistance(targetPos);
 						dir = targetPos - obj->GetPosition();
 					}
-					//restTime.StartTimer();
 				}
 				catch (...)
 				{
@@ -616,7 +604,6 @@ void PlayerSkillNode::BombExplode()
 	{	
 		Object * bomb = DCurrentGameState->GetObjectByName((*iter));
 		bombPos = bomb->GetPosition();
-		//bombPos = (*iter)->GetPosition();
 
 		//check if any E get close
 		targets.clear();
@@ -632,7 +619,6 @@ void PlayerSkillNode::BombExplode()
 			cout<<"Total bomb: "<< bombObj.size() <<" - Explode bomb "<<(index+1)<<endl;
 
 			bomb->SetIsAlive(false);
-			//(*iter)->SetIsAlive(false);
 			iter = bombObj.erase(iter);
 			auto timerIter = bombTimer.begin();
 			for (int j = 0; j < index; j++)
@@ -662,8 +648,6 @@ void PlayerSkillNode::BombExplode()
 				{
 					targets[i]->SetStatusEffect(Status::Confusion);
 				}
-
-				// ------ Set a hitbox to active here ------ //
 				
 				targets[i]->takeDamage(7);
 			}
@@ -797,9 +781,6 @@ void PlayerSkillNode::TwoHandedStrikeSkill()
 	LeComp_BattleMageBehavior *battleMage = dynamic_cast<LeComp_BattleMageBehavior *> (player);
 	if (battleMage && battleMage->GetTarget())
 	{
-		//does extra damage
-		//battleMage->GetTarget()->takeDamage(10);
-
 		// ------ Set a hitbox to active here ------ //
 		delayHitboxTime = mesh->GetAnimationMaxTime() * 0.5f;
 		curDelayHBTime = 0;
@@ -817,10 +798,7 @@ void PlayerSkillNode::TwoHandedStrikeSkill()
 void PlayerSkillNode::ShieldBashSkill()
 {
 	activeTime = mesh->GetAnimationMaxTime();
-	//TODO: delay lost hp after player touch enemy & e move back after lose hp
 
-	//LeComp_BattleMageBehavior *battleMage = dynamic_cast<LeComp_BattleMageBehavior *> (player);
-	//if (battleMage && battleMage->GetTarget())
 	if(target)
 	{
 		LeComp_BattleMageBehavior* battleMage = dynamic_cast<LeComp_BattleMageBehavior*>(player);
@@ -829,7 +807,6 @@ void PlayerSkillNode::ShieldBashSkill()
 			battleMage->SetSlowdown(0.1f * ability.level);
 		}
 
-		//EnemyAI* enemy = dynamic_cast<EnemyAI*>(battleMage->GetTarget());
 		EnemyAI* enemy = dynamic_cast<EnemyAI*>(target);
 		float3 enemyPos = enemy->owner->GetPosition();
 		float3 playerPos = player->owner->GetPosition();
@@ -986,7 +963,6 @@ void PlayerSkillNode::FireballSkill()
 	float fireballHigh = 5.0f;
 	Object *particleSys = player->owner->owningGameState->AddObject(player->owner->GetName() + "Fireball" + std::to_string(numPE++));
 	float3 playerPos = player->owner->GetTransform()->position;
-	//PE_Shot *peShot = nullptr;
 	if (target)
 	{
 		float3 enemyPos = target->owner->GetPosition();
@@ -994,12 +970,10 @@ void PlayerSkillNode::FireballSkill()
 		if (ability.level < maxLevel)
 		{
 			peShot = particleSys->AddComponent<PE_Shot>(new PE_Shot(particleSys, enemyPos + float3{ 0, 1, 0 }*fireballHigh, enemyPos, ability.name, true, player));
-			//peShot = particleSys->AddComponent<PE_Shot>(new PE_Shot(particleSys, enemyPos + float3{ 0, 1, 0 }*fireballHigh, enemyPos, true, player));
 		}
 		else
 		{
 			peShot = particleSys->AddComponent<PE_Shot>(new PE_Shot(particleSys, enemyPos + float3{ 0, 1, 0 }*fireballHigh, enemyPos, ability.name, true, player, true));
-			//peShot = particleSys->AddComponent<PE_Shot>(new PE_Shot(particleSys, enemyPos + float3{ 0, 1, 0 }*fireballHigh, enemyPos, true, player, true));
 		}
 		
 		active = true;		
@@ -1016,7 +990,6 @@ void PlayerSkillNode::FireballSkill()
 		else
 		{
 			peShot = particleSys->AddComponent<PE_Shot>(new PE_Shot(particleSys, target + float3{ 0, 1, 0 }*fireballHigh, target, ability.name, true, player, true));
-			//peShot = particleSys->AddComponent<PE_Shot>(new PE_Shot(particleSys, target + float3{ 0, 1, 0 }*fireballHigh, target, true, player, true));
 		}
 	}
 	peShot->SetMaterial(player->owner->owningGameState->Renderer->GetMaterial("fireball"));
@@ -1035,14 +1008,6 @@ void PlayerSkillNode::LightningBolt()
 
 	float aimDis = aimPos.GetDistance(playerPos);
 	float3 targetDir = aimPos - playerPos;
-
-	//peLightning = particleSys->AddComponent<PE_Lightning>(new PE_Lightning(particleSys, playerPos, target->owner->GetPosition()));
-		////target->takeDamage(5);
-		//// ------ Set a hitbox to active here ------ //
-		//hitboxCol->owner->SetPosition(target->owner->GetPosition() - playerPos);
-		//hitboxCol->SetActive(true);
-		//target->ChangeStatus(Status::Paralysis);
-		//active = true;
 
 	targets.clear();
 	DCurrentGameState->CollisionSystem->ComponentSphereCast(player->owner->GetPosition(), 6.0f + ability.level, targets);
@@ -1174,15 +1139,13 @@ void PlayerSkillNode::HuntersMarkSkill()
 void PlayerSkillNode::EntangleSkill()
 {
 	activeTime = 1.5f;
-	//LeComp_BattleMageBehavior *battleMage = dynamic_cast<LeComp_BattleMageBehavior *> (player);
-	//if (battleMage && battleMage->GetTarget())
+
 	if(target)
 	{
 		float3 playerPos = player->owner->GetPosition();
 		float3 enemyPos = target->owner->GetPosition();
 		float dis = enemyPos.GetDistance(playerPos);
 		Object *particleSys = player->owner->owningGameState->AddObject(player->owner->GetName() + "EntangleArrow" + std::to_string(numPE++));
-		//PE_Shot *peShot = particleSys->AddComponent<PE_Shot>(new PE_Shot(particleSys, playerPos, enemyPos));
 		peShot = particleSys->AddComponent<PE_Shot>(new PE_Shot(particleSys, playerPos, enemyPos));
 		peShot->SetMaterial(player->owner->owningGameState->Renderer->GetMaterial("arrow"));
 		peShot->SetOffset({0, 0.2f, 0});
@@ -1193,7 +1156,6 @@ void PlayerSkillNode::EntangleSkill()
 
 		//arrow deals less damage
 		EnemyAI *enemy = dynamic_cast<EnemyAI*>(target);
-		//enemy->takeDamage(3);
 		// ------ Set a hitbox to active here ------ //
 		hitboxCol->SetActive(true);
 		active = true;
@@ -1267,7 +1229,6 @@ void PlayerSkillNode::MultishotSkill()
 				Object *particleSys = player->owner->owningGameState->AddObject(player->owner->GetName() + "MultiArrow" + std::to_string(player->owner->GetPlayerNumber()) + std::to_string(numPE++));
 				// ------ Set a hitbox to active here ------ //
 				PE_Shot *peShot1 = particleSys->AddComponent<PE_Shot>(new PE_Shot(particleSys, playerPos, enemyPos, ability.name, true, player));
-				//PE_Shot *peShot1 = particleSys->AddComponent<PE_Shot>(new PE_Shot(particleSys, playerPos, enemyPos, true, player));
 				peShot1->SetMaterial(player->owner->owningGameState->Renderer->GetMaterial("arrow"));
 				peShot1->SetOffset({ 0, 0.2f, 0 });
 				peShot1->SetMaxDistance(dis);
@@ -1303,10 +1264,6 @@ void PlayerSkillNode::ArrowVolleySkill()
 
 	float3 playerPos = player->owner->GetTransform()->position;
 	float aimDis = aimPos.GetDistance(playerPos);	
-	//if (aimPos == float3{0, 0, 0})
-	//{
-	//	aimPos = playerPos + player->owner->GetForward()*7.0f;
-	//}
 
 #pragma region PE
 	Object *particleSys = player->owner->owningGameState->AddObject(player->owner->GetName() + "ArrowVolley" + std::to_string(player->owner->GetPlayerNumber()) + std::to_string(numPE++));
@@ -1318,7 +1275,6 @@ void PlayerSkillNode::ArrowVolleySkill()
 	peShot1->SetFixedColor({1, 1, 1});
 	peShot1->InitializeParticle(LeRenderer::device);
 
-	//TODO: delay this for a while util arrow hit
 	Object *pS = player->owner->owningGameState->AddObject(player->owner->GetName() + "PE Vortex" + std::to_string(numPE++));
 	PE_Status* peVortex = pS->AddComponent<PE_Status>(new PE_Status(nullptr, pS));
 	peVortex->SetMaterial(player->owner->owningGameState->Renderer->GetMaterial("vortex"));
@@ -1348,7 +1304,6 @@ void PlayerSkillNode::ArrowVolleySkill()
 			continue;
 		}
 		//making them take damage as well as become vulnerable to AoE attacks from other players
-		//targets[i]->takeDamage(5);
 
 		//inflict confusion
 		targets[i]->ChangeStatus(Status::Confusion);
@@ -1372,16 +1327,12 @@ void PlayerSkillNode::PoisonShotSkill()
 {
 	activeTime = 1.5f;
 
-	//LeComp_BattleMageBehavior *battleMage = dynamic_cast<LeComp_BattleMageBehavior *> (player);
-	//if (battleMage && battleMage->GetTarget())
 	if(target)
 	{
 		float3 playerPos = player->owner->GetPosition();
-		//float3 enemyPos = battleMage->GetTarget()->owner->GetPosition();
 		float3 enemyPos = target->owner->GetPosition();
 		float dis = playerPos.GetDistance(enemyPos);
 		Object *particleSys = player->owner->owningGameState->AddObject(player->owner->GetName() + "Poison" + std::to_string(numPE++));
-		//PE_Shot *peShot = particleSys->AddComponent<PE_Shot>(new PE_Shot(particleSys, playerPos, enemyPos));
 		peShot = particleSys->AddComponent<PE_Shot>(new PE_Shot(particleSys, playerPos, enemyPos));
 		peShot->SetMaterial(player->owner->owningGameState->Renderer->GetMaterial("arrow"));
 		peShot->SetOffset({ 0, 0.2f, 0 });
@@ -1391,7 +1342,6 @@ void PlayerSkillNode::PoisonShotSkill()
 		peShot->InitializeParticle(LeRenderer::device);
 
 		//arrow deals less damage
-		//target->takeDamage(3);
 		// ------ Set a hitbox to active here ------ //
 		hitboxCol->SetActive(true);
 		active = true;
@@ -1435,11 +1385,6 @@ void PlayerSkillNode::ShadowSneakSkill()
 	ToggleBoolBuffSkillTeam(AbilityName::Shadow_Sneak);
 	cout << "Shadow Sneak: +" << buff.agility << " ALI" << endl;
 
-	//TODO: add double damage after have auto atk function (in maxLevel)
-	if (ability.level == maxLevel)
-	{
-
-	}
 
 #pragma region Buff effect
 	Object *particleSys = player->owner->owningGameState->AddObject(player->owner->GetName() + "skill" + to_string(numPE++));
@@ -1513,9 +1458,6 @@ void PlayerSkillNode::DaggerSkill()
 	LeComp_BattleMageBehavior *battleMage = dynamic_cast<LeComp_BattleMageBehavior*>(player);
 	if (battleMage)
 	{
-		//TODO: may use trigger instead of button
-		//have to change code if want to use trigger, this will be trigger inmmedially
-		//if (DInput->GetControllerAxis(battleMage->GetCurController(), EControllerAxis::RIGHT_TRIGGER).magnitude > 0.f)
 		if(DInput->GetControllerButtonUp(battleMage->GetCurController(), EControllerButton::B))
 		{
 			hitboxCol->SetActive(true);
@@ -1559,10 +1501,6 @@ void PlayerSkillNode::DashAttackSkill()
 		float3 dir = enemyPos - playerPos;
 
 		enemy->FreezeEnemy(1.0f);
-		// ------ Set a hitbox to active here ------ //
-
-		//hitboxCol->SetActive(true);
-
 		timer.StartTimer();
 		deltaTimerMove.StartTimer();
 
@@ -1628,14 +1566,6 @@ PlayerSkillNode::PlayerSkillNode(LeComp_MOB * p, int _unlockPoints[5], Ability _
 
 PlayerSkillNode::~PlayerSkillNode()
 {
-	//if (childs.size() > 0)
-	//{
-	//	for (int i = 0; i < childs.size(); i++)
-	//	{
-	//		delete childs[i];
-	//	}
-	//	childs.clear();
-	//}
 }
 
 void PlayerSkillNode::DisableBuffEarly()
@@ -1651,7 +1581,7 @@ void PlayerSkillNode::ActiveSkill(LeComp_MOB* skillTarget, float3 _aimPos)
 	{
 		ability.onCooldown = false;
 	}
-	if (!ability.onCooldown)// && (restTime.GetCurTimeSecond() > ability.cooldown))
+	if (!ability.onCooldown)
 	{
 		cout << "Active " << enumString[(int)ability.name] << endl;
 		switch (ability.name)
@@ -2002,7 +1932,6 @@ void SkillTreePlayer::SetTeam(Object * _team[4])
 
 	for (int i = 0; i < 5; i++)
 	{
-		//TODO: change the valid value later
 		int unlockPoints[5] = { 0, 5, 10, 15, 25 }; //this is an example
 		PlayerSkillNode *skill = new PlayerSkillNode(player, unlockPoints, ability->GetActiveAbility(i), team, stickDir);
 		skills.push_back(skill);
@@ -2024,7 +1953,6 @@ SkillTreePlayer & SkillTreePlayer::operator=(SkillTreePlayer & other)
 	{
 		tempMember = other.team[i];
 		team[i] = tempMember;
-		//team[i] = other.team[i];
 	}
 	return *this;
 }
@@ -2040,28 +1968,17 @@ SkillTreeEnemy::SkillTreeEnemy(LeComp_MOB * _ai)
 
 SkillTreeEnemy::SkillTreeEnemy(SkillTreeEnemy & other)
 {
-	//skills.resize(other.skills.size());
-	//for (int i = 0; i < skills.size(); i++)
-	//	skills[i] = other.skills[i];
 	ai = other.ai;
 }
 
 SkillTreeEnemy & SkillTreeEnemy::operator=(SkillTreeEnemy & other)
 {
-	//skills.resize(other.skills.size());
-	//for (int i = 0; i < skills.size(); i++)
-	//	skills[i] = other.skills[i];
 	ai = other.ai;
 	return *this;
 }
 
 SkillTreeEnemy::~SkillTreeEnemy()
 {
-	//for (int i = 0; i < skills.size(); i++)
-	//{
-	//	delete skills[i];
-	//}5
-	//skills.clear();
 }
 
 void SkillTreeEnemy::ActiveSkill(DamageType damageType)
@@ -2089,48 +2006,9 @@ void SkillTreeEnemy::Shot()
 		peShot->SetMaterial(ai->owner->owningGameState->Renderer->GetMaterial("arrow"));
 		peShot->SetOffset({ 0, 0.2f, 0 });
 		peShot->InitializeParticle(LeRenderer::device);
-	}
-	//SphereCollider *collider = particleSys->AddComponent<SphereCollider>();
-	//collider->Init(peShot->GetSize().x);
-	////make collision don't push other things
-	//collider->isTrigger = true; 
+	} 
 }
 
-
-
-
-//void SkillTreeFamiliar::Heal()
-//{
-//	if (deltaHealTimer.GetCurTimeSecond() > deltaTime)
-//	{
-//		if (player->getAlive() && player->getCurHealth() < player->getMaxHealth()*0.7f)
-//		{
-//			Object *obj = player->owner->owningGameState->AddObject(player->owner->GetName() + std::string("PE Heal") + std::to_string(numPE++));
-//			PE_Respawn *pe = obj->AddComponent<PE_Respawn>();
-//			pe->SetMaterial(player->owner->owningGameState->Renderer->GetMaterial("cross"));
-//			pe->SetRandomColor(false);
-//			pe->SetEmissionRate(0.3f);
-//			pe->SetAliveTimePS(1.2f);
-//			pe->SetDirection(2); //+y
-//			pe->SetTransparent(0.7f);
-//			pe->SetMovingSpeed(5.0f);
-//			pe->SetFixedColor({1, 0, 0});
-//			pe->SetMinMaxTextureSize({ 0.3f, 0.3f }, {0.3f, 0.3f});
-//			
-//			pe->SetCanRotate(false);
-//			pe->InitializeParticle(LeRenderer::device);
-//
-//			obj->SetPosition(player->owner->GetPosition());
-//
-//			//use Heal skill
-//			int hp = (int)(player->getMaxHealth()*0.1f);
-//			player->RestoreHP(hp);
-//
-//
-//			deltaHealTimer.StartTimer();
-//		}
-//	}
-//}
 
 void SkillTreeFamiliar::AttackTarget()
 {

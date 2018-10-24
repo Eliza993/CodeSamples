@@ -27,7 +27,6 @@ LeComp_Familiar::LeComp_Familiar(Object * owner):LeComp_MOB(owner)
 LeComp_Familiar::LeComp_Familiar(Object * owner, LeComp_BattleMageBehavior * p): LeComp_MOB(owner)
 {
 	player = p;
-	//curAtkTime = 0;
 	followDeltaTime = 0;
 	offset = {0, 3.0f, 0};
 	skillTree = SkillTreeFamiliar(player, this);
@@ -63,5 +62,4 @@ void LeComp_Familiar::Update(float dt)
 	{
 		skillTree.StealMoney();
 	}
-	//skillTree.Heal();
 }
